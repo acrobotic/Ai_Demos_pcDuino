@@ -7,17 +7,16 @@ dht DHT;
 void setup()
 {
     Serial.begin(115200);
-    Serial.println("DHT TEST PROGRAM ");
-    Serial.print("LIBRARY VERSION: ");
-    Serial.println(DHT_LIB_VERSION);
-    Serial.println();
-    Serial.println("Type,\tstatus,\tHumidity (%),\tTemperature (C)\tTime (us)");
+    printf("DHT TEST PROGRAM ");
+    //printf("LIBRARY VERSION: ");
+    //printf(DHT_LIB_VERSION);
+    //printfln("Type,\tstatus,\tHumidity (%),\tTemperature (C)\tTime (us)");
 }
 
 void loop()
 {
     // READ DATA
-    Serial.print("DHT22, \t");
+    printf("DHT22, \t");
 
     uint32_t start = micros();
     int chk = DHT.read22(DHT22_PIN);
@@ -26,25 +25,24 @@ void loop()
     switch (chk)
     {
     case DHTLIB_OK:
-        Serial.print("OK,\t");
+        printf("OK,\t");
         break;
     case DHTLIB_ERROR_CHECKSUM:
-        Serial.print("Checksum error,\t");
+        printf("Checksum error,\t");
         break;
     case DHTLIB_ERROR_TIMEOUT:
-        Serial.print("Time out error,\t");
+        printf("Time out error,\t");
         break;
     default:
-        Serial.print("Unknown error,\t");
+        printf("Unknown error,\t");
         break;
     }
     // DISPLAY DATA
-    Serial.print(DHT.humidity, 1);
-    Serial.print(",\t");
-    Serial.print(DHT.temperature, 1);
-    Serial.print(",\t");
-    Serial.print(stop - start);
-    Serial.println();
+    printf("%f", DHT.humidity);
+    printf(",\t");
+    printf("%f", DHT.temperature);
+    printf(",\t");
+    printf("%f\n", stop - start);
 
     delay(2000);
 }

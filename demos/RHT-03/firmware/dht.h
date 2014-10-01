@@ -12,10 +12,10 @@
 #ifndef dht_h
 #define dht_h
 
-#if ARDUINO < 100
-#include <WProgram.h>
+#if (ARDUINO >= 100) || defined(PCDUINO_IDE)
+ #include "Arduino.h"
 #else
-#include <Arduino.h>
+ #include "WProgram.h"
 #endif
 
 #define DHT_LIB_VERSION "0.1.13"
@@ -33,6 +33,7 @@
 // loops using TIMEOUT use at least 4 clock cycli
 // so 100 us takes max 400 loops
 // so by dividing F_CPU by 40000 we "fail" as fast as possible
+#define F_CPU 16*1000*1000
 #define DHTLIB_TIMEOUT (F_CPU/40000)
 
 class dht
