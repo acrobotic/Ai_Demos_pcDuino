@@ -15,3 +15,9 @@ To monitor your USB camera install the application `guvcview` (`sudo apt-get ins
   sudo apt-get install streamer
   ./bash.sh
 
+### Advanced Capture
+
+Using Python and OpenCV you can control when frames are captured and perform some image processing to further control what is done.
+
+  sudo apt-get install python-opencv
+  ./python.py
