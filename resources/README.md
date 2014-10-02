@@ -1,10 +1,12 @@
-# pcDuino v3 Resources
+# pcDuino3 Resources
 
 ## Official Links
 
+1. [pcDuino3 Homepage](http://www.pcduino.com/pcduino-v3/)
 1. [pcDuino Wiki](http://www.pcduino.com/wiki/index.php?title=Book)
+1. [pcDuino C Library using Arduino syntax](https://github.com/pcduino/c_environment)
 
-## Arduino Programming
+## Arduino Differences
 
 Some things to keep in mind when developing with Arduino on the pcDuino.
 
