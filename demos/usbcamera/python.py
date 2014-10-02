@@ -17,7 +17,8 @@ while True:
   img = cv.QueryFrame(capture)
   cv.ShowImage("camera", img)
   keyinput = cv.WaitKey(10) 
-  keyinput -= 0x100000
+  # not required on pcDuino Ubuntu target 
+  #keyinput -= 0x100000
   if keyinput == Keycode['ESCAPE']:
     break
 
