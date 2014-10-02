@@ -13,4 +13,5 @@ To monitor your USB camera install the application `guvcview` (`sudo apt-get ins
 ### Simple Catpure
 
   sudo apt-get install streamer
-  streamer -c /dev/video0 -b 16 -o output.jpg
+  ./bash.sh
+
