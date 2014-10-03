@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import cv
+import cv2
 
 Keycode = {
   'ESCAPE' : 27,
@@ -10,17 +10,35 @@ Keycode = {
   'RIGHT'  : 63235,
 }
 
-cv.NamedWindow("camera", 1)
-capture = cv.CaptureFromCAM(0)
+def camera_save_frame(img):
+  cv2.imwrite("capture.jpg",img)
+
+def servo_up():
+  pass
+
+def servo_down():
+  pass
+
+def servo_left():
+  pass
+
+def servo_right():
+  pass
+
+cv2.namedWindow("camera",1)
+capture = cv2.VideoCapture(0)
 
 while True:
-  img = cv.QueryFrame(capture)
-  cv.ShowImage("camera", img)
-  keyinput = cv.WaitKey(10) 
-  # not required on pcDuino Ubuntu target 
+  ret, img = capture.read()
+  cv2.imshow("camera",img)
+  keyinput = cv2.waitKey(10)
+  # not required on pcDuino Ubuntu target
   #keyinput -= 0x100000
   if keyinput == Keycode['ESCAPE']:
     break
+  if keyinput == Keycode['SPACE']:
+    camera_save_frame(img)
 
-cv.DestroyWindow("camera")
+capture.release()
+cv2.destroyWindow("camera")
 
