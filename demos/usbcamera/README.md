@@ -24,3 +24,9 @@ Using Python and OpenCV you can control when frames are captured and perform som
 
     sudo apt-get install python-opencv python-numpy
     ./python.py
+
+## Additional Resources
+
+1. (OpenCV)[http://www.opencv.org/]
+1. (Python)[https://www.python.org/]
+1. (OpenCV Python Tutorials)[http://docs.opencv.org/trunk/doc/py_tutorials/py_tutorials.html]
