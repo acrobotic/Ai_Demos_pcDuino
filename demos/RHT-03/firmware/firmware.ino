@@ -1,4 +1,5 @@
-/* Digital Humidity and Temperature Sensor pcDuino Test Program
+/* 
+ * Digital Humidity and Temperature Sensor pcDuino Test Program
  *
  * Note: the RHT-03 is also known as the DHT-22 sensor.
  *
@@ -27,7 +28,6 @@ void setup()
 
 void loop()
 {
-    // READ DATA
     printf("DHT22, \t");
 
     uint32_t start = micros();
