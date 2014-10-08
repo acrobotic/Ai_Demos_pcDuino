@@ -11,6 +11,8 @@
 
 Some things to keep in mind when developing with Arduino on the pcDuino.
 
+
+1. All I/O on the pcDuino is 3.3 V I/O. If your Arduino shield needs 5 V input or 5 V output, you need a bridge board for pcDuino to avoid damage. For external breadboard circuits you need a voltage divider.
 1. There is no AVR microcontroller on the target nor is one being simulated. Instead, the low-level API has been implemented into the Arduino IDE to allow the Arduino code to compile into C code and run in a terminal on the pcDuino.
 1. Since the host and the target are the same, the serial monitor is not useful. Instead, use `printf()`. Alternative, you could loopback the serial transmit and receive pins and use a serial terminal program to connected to `/dev/ttyS01`.
 1. Some libraries need to be modified to support this board. Often, you will have to add the `PCDUINO_IDE` C pre-processor macro or add it to conditionals. The macro is defined as a compiler command line argument.
@@ -27,6 +29,6 @@ Some things to keep in mind when developing with Arduino on the pcDuino.
 * PWM1/2 are hardware PWMs. They are set to 520Hz with 256 duty cycle level by default. 
 * PWM1/3/4/5 are 5Hz with 10 duty cycle level by default. Thus, the actual duty level is value*10/256. 
  * PWM1/3/4/5 are simulated by GPIO in software, so they cannot be set to a high frequency. If you use a high frequency PWM with software GPIO, the CPU usage will be in very high.
-* The six PWM pins are shared with GPIO, and PWM4/5 pins are also shared with SPI I/O. If you are using PWM, don’t call pinMode() or SPI function to specific I/O.
+* PWM1~PWM5 are shared with GPIO, and PWM4/5 pins are also shared with SPI I/O. If you are using PWM, don’t call pinMode() or SPI function to specific I/O.
 
 
