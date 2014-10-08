@@ -2,12 +2,13 @@
 
 ## Demos
 
-For your learning pleasure, demo code and details are provided for all the included sensors and actuators.
+Sample project code and details are provided for the sensors and actuators included with the kit. See the demo specific documentation for more details. Specific instructions for each demo implementation (Arduino C, Python, Bash, etc...) are included in the source code.
 
 ## Resources
 
-Important pcDuino3 specific details and datasheets are also collected in this repository for your convenience. 
+Important pcDuino3 specific details and specifications are included in this folder.
 
 ## Feedback
 
 You are encouraged to use the ticket system to suggestion improvements, report errors, or ask questions.
+
