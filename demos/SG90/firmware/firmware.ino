@@ -1,6 +1,8 @@
 /* pcDuino Servo PWM Example
- * 
- *  1. Connect J11.7 GPIO6 / PWM6 to the control pin
+ *
+ *  1. Connect J11.7 GPIO6 / PWM6 to the left yellow pin
+ *  2. Connect J9.4 3.3 V to the middle orange pin
+ *  3. Connect J9.6 GND to the left brown pin
  */
 
 int servopin = 6;
