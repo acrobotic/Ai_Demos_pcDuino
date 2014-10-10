@@ -1,5 +1,7 @@
 # Acrobotic pcDuino3 Kit Examples
 
+![Enclosure and Robot](images/DSC_0977.jpg)
+
 ## Demos
 
 Sample project code and details are provided for the sensors and actuators included with the kit. See the demo specific documentation for more details. Specific instructions for each demo implementation (Arduino C, Python, Bash, etc...) are included in the source code.
