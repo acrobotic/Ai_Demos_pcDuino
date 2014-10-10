@@ -30,6 +30,8 @@ Some things to keep in mind when developing with Arduino on the pcDuino.
 * PWM2/3/4/5 are 5Hz with 10 duty cycle level by default. Thus, the actual duty level is value*10/256. 
  * PWM2/3/4/5 are simulated by GPIO in software, so they cannot be set to a high frequency. If you use a high frequency PWM with software GPIO, the CPU usage will be in very high.
 * PWM2~PWM5 are shared with GPIO and PWM4/5 pins are shared with SPI I/O. If you are using PWM, don’t call pinMode() or SPI function to specific I/O.
+* PWM3/9/10/11 support frequencies 125-2000 Hz at different duty cycles
+* PWM5/6 support frequencies 195,260,390,520,781 at 256 duty cycles
 
 ### SPI
 
