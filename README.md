@@ -8,7 +8,7 @@ Sample project code and details are provided for the sensors and actuators inclu
 
 ## Resources
 
-A pcDuino3 getting started guide, setup notes, and important specifications are documented on the [wiki](wiki/README.md).
+A pcDuino3 getting started guide, setup notes, and important specifications are documented on the [wiki](https://github.com/acrobotic/Ai_pcDuino_Examples/wiki).
 
 ## Feedback
 
