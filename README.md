@@ -8,7 +8,7 @@ Sample project code and details are provided for the sensors and actuators inclu
 
 ## Resources
 
-Important pcDuino3 specific details and specifications are included in this folder.
+A pcDuino3 getting started guide, setup notes, and important specifications are documented on the [wiki](wiki/README.md).
 
 ## Feedback
 
