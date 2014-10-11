@@ -5,12 +5,28 @@
 1. [pcDuino3 Homepage](http://www.pcduino.com/pcduino-v3/)
 1. [pcDuino Wiki](http://www.pcduino.com/wiki/index.php?title=Book)
 
+## Getting Started
+
+1. Connect a monitor to the HDMI port.
+1. Connect a mouse and keyboard to the USB port.
+1. Connect the 5V/2A micro-USB wall adapter to the DC In / Power In USB host port.
+[pcDuino Power](http://cnlearn.linksprite.com/wp-content/uploads/2014/04/pcDuino+v3%E6%B5%8B%E8%AF%84-3-565.png)
+1. If this is the first time booting this root file system, allow the startup script to expand your root file system to maximize your NAND usage.
+
+## (L)Ubuntu
+
+* The default user/password is 'ubuntu'/'ubuntu'.
+* The 'root' user has no password by default.
+
+### Recommended Configuration
+
+1. Disable your screen saver by opening a terminal and entering `sed -i 's/xscreensaver.mode:.*/xscreensaver.mode:\ off/' ~/.xscreensaver`.
+
 ## Arduino-like Programming
 
 1. [pcDuino C Library using Arduino syntax](https://github.com/pcduino/c_environment)
 
 Some things to keep in mind when developing with Arduino on the pcDuino.
-
 
 1. All I/O on the pcDuino is 3.3V. If your Arduino shield need a 5V input or output, you need a bridge board for pcDuino to avoid damage. For external breadboard circuits you need a voltage divider.
 1. There is no AVR microcontroller on the target nor is one being simulated. Instead, the low-level API has been implemented into the Arduino IDE to allow the Arduino code to compile into C code and run in a terminal on the pcDuino.
@@ -27,11 +43,11 @@ Some things to keep in mind when developing with Arduino on the pcDuino.
 ### PWM
 
 * PWM0/1 are hardware PWMs with a 16-bit counter (1~4096). They are set to 520Hz with 256 duty cycle level by default. 
-* PWM2/3/4/5 are 5Hz with 10 duty cycle level by default. Thus, the actual duty level is value*10/256. 
+* PWM2/3/4/5 are 5Hz with 10 duty cycle level by default. Thus, the actual duty level is `value*10/256`. 
  * PWM2/3/4/5 are simulated by GPIO in software, so they cannot be set to a high frequency. If you use a high frequency PWM with software GPIO, the CPU usage will be in very high.
 * PWM2~PWM5 are shared with GPIO and PWM4/5 pins are shared with SPI I/O. If you are using PWM, don’t call pinMode() or SPI function to specific I/O.
 * PWM3/9/10/11 support frequencies 125-2000 Hz at different duty cycles
-* PWM5/6 support frequencies 195,260,390,520,781 at 256 duty cycles
+* PWM5/6 support frequencies 195,260,390,520,781 Hz at 0~255 duty cycles
 
 ### SPI
 
