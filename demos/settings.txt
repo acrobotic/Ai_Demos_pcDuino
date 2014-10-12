@@ -1,5 +1,0 @@
-Laser-Cutting settings:
-
-Layer Power Speed
-ENG   60%   100%
-VEC   95%   5.5%
