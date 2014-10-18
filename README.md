@@ -8,9 +8,17 @@ Sample project code and details are provided for the sensors and actuators inclu
 
 ## Resources
 
-Important pcDuino3 specific details and specifications are included in this folder.
+A pcDuino3 getting started guide, setup notes, and important specifications are documented on the [wiki](https://github.com/acrobotic/Ai_pcDuino_Examples/wiki).
+
+Office hours will be held on Saturdays during the Pasadena Arduino meetup: www.meetup.com/Arduino-Electronics-DIY-Robotics-Pasadena/
 
 ## Feedback
 
 You are encouraged to use the ticket system to suggestion improvements, report errors, or ask questions.
+
+## Supplies
+
+The Kits were designed in collaboration with a local (Pasadena) [Interactive Electronics & Fabrication company](http://acrobotic.com).  Additional electronic supplies are available on their website, including an option for same-day pick-up using the discount code MEETUPFS00.
+
+
 
