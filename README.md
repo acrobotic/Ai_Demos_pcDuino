@@ -10,6 +10,8 @@ Sample project code and details are provided for the sensors and actuators inclu
 
 A pcDuino3 getting started guide, setup notes, and important specifications are documented on the [wiki](https://github.com/acrobotic/Ai_pcDuino_Examples/wiki).
 
+SolidWorks 2012 edition models and drawings and available as well.
+
 ## Feedback
 
 You are encouraged to use the ticket system to suggestion improvements, report errors, or ask questions.
