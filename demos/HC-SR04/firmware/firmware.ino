@@ -2,10 +2,10 @@
  * pcDuino HC-SR04 ultrasonic distance sensor example.
  * 
  * HC-SR04 to pcDuino
- * GND        GND
+ * GND        GND (J9.7)
  * ECHO       GPIO2 (J11.3)
  * TRIG       GPIO3 (J11.4)
- * VCC        3.3V
+ * VCC        3.3V (J9.4)
  *
  * Note: datasheets recommend connecting GND before VCC.
  *
