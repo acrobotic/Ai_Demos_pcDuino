@@ -14,6 +14,8 @@
 #define trigPin 2
 #define echoPin 3
 
+#define ECHO_TIMEOUT_US 60*1000
+
 void setup() {
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
@@ -22,9 +24,9 @@ void setup() {
 void loop() {
   int duration, distance;
   digitalWrite(trigPin, HIGH);
-  delayMicroseconds(1000);
+  delay(10);
   digitalWrite(trigPin, LOW);
-  duration = pulseIn(echoPin, HIGH);
+  duration = pulseIn(echoPin, HIGH, ECHO_TIMEOUT_US);
 
   // Distance = Time-of-Flight (in one direction) /Inverse of Sound Speed
 
