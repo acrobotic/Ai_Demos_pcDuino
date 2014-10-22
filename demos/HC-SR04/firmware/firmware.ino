@@ -1,16 +1,20 @@
 /*
- HC-SR04 Ping distance sensor]
- VCC  to pcDuino 3.3V 
- GND  to pcDuino GND
- ECHO to pcDuino pin 13
- TRIG to pcDuino pin 12
+ * pcDuino HC-SR04 ultrasonic distance sensor example.
+ * 
+ * HC-SR04 to pcDuino
+ * GND        GND
+ * ECHO       GPIO2 (J11.3)
+ * TRIG       GPIO3 (J11.4)
+ * VCC        3.3V
+ *
+ * Note: datasheets recommend connecting GND before VCC.
+ *
  */
 
-#define trigPin 12
-#define echoPin 13
+#define trigPin 2
+#define echoPin 3
 
 void setup() {
-  Serial.begin (9600);
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
 }
@@ -26,11 +30,11 @@ void loop() {
 
   distance = (duration/2) / 29.1;
   if (distance >= 200 || distance <= 0){
-    Serial.println("Out of range");
+    printf("Out of range\n");
   }
   else {
-    Serial.print(distance);
-    Serial.println(" cm");
+    printf("%d cm\n", distance);
   }
+  
   delay(500);
 }
