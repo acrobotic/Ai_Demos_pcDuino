@@ -11,36 +11,43 @@
  *
  */
 
-int servopin = 6;
+int servopin = 5;
 int val = 0;
+int isNeg = 1;
 
 void servo_pulse(int servopin, int myangle)
 {
-	int pulse_width_on_us = map(myangle, 0, 180, 500, 2480);	
-	int pulse_width_off_us = 20*1000 - pulse_width_on_us;
-	//printf("on %d off %d us\n", pulse_width_on_us, pulse_width_off_us);
+  int pulse_width_on_us = map(myangle, -90, 90, 1000, 2000);  
+  int pulse_width_off_us = 20*1000 - pulse_width_on_us;
 
-	digitalWrite(servopin, HIGH);
-	delayMicroseconds(pulse_width_on_us);
+  digitalWrite(servopin, HIGH);
+  delayMicroseconds(pulse_width_on_us);
 
-	digitalWrite(servopin, LOW);
-	delayMicroseconds(pulse_width_off_us);
+  digitalWrite(servopin, LOW);
+  delayMicroseconds(pulse_width_off_us);
 }
 
 void setup()
 {
-	pinMode(servopin, OUTPUT);
-
-	// center servo
-	servo_pulse(servopin, 90);
+  pinMode(servopin, OUTPUT);
 }
 
 void loop()
 {
-	int angle = val*(180/9);
-	servo_pulse(servopin, angle);
-	val += 1;
-	if (val > 9)
-		val = 0;
-	delay(500);
+  if (val >= 90)
+  {
+    isNeg = -1;
+  }
+  else if ( val <= -90 )
+  {
+    isNeg = 1;
+  }
+        
+  val += isNeg * 90;
+            
+  //This will provide smoother movement to the desired angle
+  for (int i = 0; i < 30; i++) {
+    servo_pulse(servopin, val);
+  }
+  delay(1000);
 }
