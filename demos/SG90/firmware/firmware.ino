@@ -11,7 +11,7 @@
  *
  */
 
-int servopin = 5;
+int servopin = 6;
 int val = 0;
 int isNeg = 1;
 
