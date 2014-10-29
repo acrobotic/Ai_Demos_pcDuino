@@ -13,34 +13,54 @@
 
 int servopin = 6;
 int val = 0;
+int isNeg = 1;
+
+enum {
+  SG90_CENTER_DEG = 0,
+  SG90_LEFT_DEG   = -90,
+  SG90_RIGHT_DEG  = 90,
+  SG90_CENTER_US  = 1000,
+  SG90_LEFT_US    = 1500,
+  SG90_RIGHT_US   = 2000,
+  SG90_PERIOD_US  = 20000
+};
 
 void servo_pulse(int servopin, int myangle)
 {
-	int pulse_width_on_us = map(myangle, 0, 180, 500, 2480);	
-	int pulse_width_off_us = 20*1000 - pulse_width_on_us;
-	//printf("on %d off %d us\n", pulse_width_on_us, pulse_width_off_us);
+  int pulse_width_on_us = map(myangle, 
+                              SG90_LEFT_DEG, SG90_RIGHT_DEG, 
+                              SG90_LEFT_US,  SG90_RIGHT_US);  
+  int pulse_width_off_us = SG90_PERIOD_US - pulse_width_on_us;
 
-	digitalWrite(servopin, HIGH);
-	delayMicroseconds(pulse_width_on_us);
+  digitalWrite(servopin, HIGH);
+  delayMicroseconds(pulse_width_on_us);
 
-	digitalWrite(servopin, LOW);
-	delayMicroseconds(pulse_width_off_us);
+  digitalWrite(servopin, LOW);
+  delayMicroseconds(pulse_width_off_us);
 }
 
 void setup()
 {
-	pinMode(servopin, OUTPUT);
-
-	// center servo
-	servo_pulse(servopin, 90);
+  pinMode(servopin, OUTPUT);
 }
 
 void loop()
 {
-	int angle = val*(180/9);
-	servo_pulse(servopin, angle);
-	val += 1;
-	if (val > 9)
-		val = 0;
-	delay(500);
+  if (val >= 90)
+  {
+    isNeg = -1;
+  }
+  else if ( val <= -90 )
+  {
+    isNeg = 1;
+  }
+        
+  val += isNeg * 90;
+            
+  for (int i = 0; i < 30; i++) {
+    servo_pulse(servopin, val);
+    delayMicroseconds(1);
+  }
+
+  delay(1000);
 }
