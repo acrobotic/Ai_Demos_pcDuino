@@ -15,10 +15,22 @@ int servopin = 6;
 int val = 0;
 int isNeg = 1;
 
+enum {
+  SG90_CENTER_DEG = 0,
+  SG90_LEFT_DEG   = -90,
+  SG90_RIGHT_DEG  = 90,
+  SG90_CENTER_US  = 1000,
+  SG90_LEFT_US    = 1500,
+  SG90_RIGHT_US   = 2000,
+  SG90_PERIOD_US  = 20000
+};
+
 void servo_pulse(int servopin, int myangle)
 {
-  int pulse_width_on_us = map(myangle, -90, 90, 1000, 2000);  
-  int pulse_width_off_us = 20*1000 - pulse_width_on_us;
+  int pulse_width_on_us = map(myangle, 
+                              SG90_LEFT_DEG, SG90_RIGHT_DEG, 
+                              SG90_LEFT_US,  SG90_RIGHT_US);  
+  int pulse_width_off_us = SG90_PERIOD_US - pulse_width_on_us;
 
   digitalWrite(servopin, HIGH);
   delayMicroseconds(pulse_width_on_us);
@@ -45,9 +57,10 @@ void loop()
         
   val += isNeg * 90;
             
-  //This will provide smoother movement to the desired angle
   for (int i = 0; i < 30; i++) {
     servo_pulse(servopin, val);
+    delayMicroseconds(1);
   }
+
   delay(1000);
 }
