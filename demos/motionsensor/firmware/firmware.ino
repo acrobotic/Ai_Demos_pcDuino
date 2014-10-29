@@ -27,10 +27,7 @@
  * 
  * Recommend setting Sx and Tx to [MIN] for testing. 
  * 
- * Note: PIR sensor will output 0-3 motion sensing pulses during 
- *       initialization. This may take up to 30 seconds.
  */
-
 
 int ledPin = 13;                // choose the pin for the LED
 int inputPin = 2;               // choose the input pin (for PIR sensor)
@@ -38,10 +35,12 @@ int pirState = LOW;             // we start, assuming no motion detected
 int pirStateLast = pirState;
  
 void setup() {
-  printf("MOTION SENSOR TEST PROGRAM\n");
   pinMode(ledPin, OUTPUT);      // declare LED as output
   pinMode(inputPin, INPUT);     // declare sensor as input
-  delay(
+  delay(30*1000);               // PIR sensor will output 0-3 motion sensing
+                                // pulses during initialization. This may take
+                                // up to 30 seconds. This is only applicable
+                                // on first power-on.
 }
  
 void loop(){
