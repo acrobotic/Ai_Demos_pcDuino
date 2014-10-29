@@ -15,15 +15,13 @@ int servopin = 6;
 int val = 0;
 int isNeg = 1;
 
-enum {
-  SG90_CENTER_DEG = 0,
-  SG90_LEFT_DEG   = -90,
-  SG90_RIGHT_DEG  = 90,
-  SG90_CENTER_US  = 1000,
-  SG90_LEFT_US    = 1500,
-  SG90_RIGHT_US   = 2000,
-  SG90_PERIOD_US  = 20000
-};
+#define SG90_CENTER_DEG 0
+#define SG90_LEFT_DEG   -90
+#define SG90_RIGHT_DEG  90
+#define SG90_CENTER_US  1000
+#define SG90_LEFT_US    1500
+#define SG90_RIGHT_US   2000
+#define SG90_PERIOD_US  20000
 
 void servo_pulse(int servopin, int myangle)
 {
