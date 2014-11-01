@@ -16,7 +16,7 @@ Office hours will be held on Saturdays during the Pasadena Arduino meetup: www.m
 
 ## Feedback
 
-You are encouraged to use the ticket system to suggestion improvements, report errors, or ask questions.
+You are encouraged to use the ticket system to suggest improvements, report errors, or ask questions.
 
 ## Supplies
 
