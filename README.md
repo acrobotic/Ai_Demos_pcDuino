@@ -22,5 +22,8 @@ You are encouraged to use the ticket system to suggest improvements, report erro
 
 The Kits were designed in collaboration with a local (Pasadena) [Interactive Electronics & Fabrication company](http://acrobotic.com).  Additional electronic supplies are available on their website, including an option for same-day pick-up using the discount code MEETUPFS00.
 
+The pcDuino Kits used for these demos can be found at:
+[Kit A](http://acrobotic.com/kit-00008.html)
+[Kit B](http://acrobotic.com/kit-00009.html)
 
 
