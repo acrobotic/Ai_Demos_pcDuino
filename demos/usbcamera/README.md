@@ -11,7 +11,7 @@ pcDuino supports USB cameras that are compliant with the USB Video Class (UVC) s
 Simple GUI program to monitor USB camera.
 
     sudo apt-get install guvcview
-    guvcview` 
+    guvcview
 
 ### Simple Catpure
 
