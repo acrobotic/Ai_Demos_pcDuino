@@ -1,4 +1,4 @@
-# Acrobotic pcDuino3 Kit Examples
+# Acrobotic Demos for pcDuino3
 
 ![Enclosure and Robot](images/DSC_0977.jpg)
 
