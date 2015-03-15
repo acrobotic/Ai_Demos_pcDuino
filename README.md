@@ -3,7 +3,7 @@
 ![Enclosure and Robot](images/pcDuino3_bot.jpg)
 
 This repository was developed for supporting the Diskovery Challenge Hackathon
-at Western Digitali (2014).
+at Western Digital (2014).
 
 ## Demos
 
