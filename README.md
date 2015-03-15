@@ -1,6 +1,9 @@
-# Acrobotic pcDuino3 Kit Examples
+# Acrobotic Demos for pcDuino3
 
-![Enclosure and Robot](images/DSC_0977.jpg)
+![Enclosure and Robot](images/pcDuino3_bot.jpg)
+
+This repository was developed for supporting the Diskovery Challenge Hackathon
+at Western Digitali (2014).
 
 ## Demos
 
@@ -21,5 +24,3 @@ You are encouraged to use the ticket system to suggest improvements, report erro
 ## Supplies
 
 The Kits were designed in collaboration with a local (Pasadena) [Interactive Electronics & Fabrication company](http://acrobotic.com).  Additional electronic supplies are available on their website, including an option for same-day pick-up using the discount code MEETUPFS00.
-
-
